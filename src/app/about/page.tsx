@@ -5,7 +5,7 @@ import Profile from "../../../public/profile1.jpg"
 
 export default function About(){
     return(
-        <section className="w-7xl h-256 m-auto flex flex-col gap-24 ">
+        <section className="w-7xl h-256 m-auto flex flex-col">
             <header className="w-full border-b border-b-text-content/50 pb-4">
                 <ul className="flex justify-between w-full">
                     {links.map((link) =>(
@@ -24,20 +24,13 @@ export default function About(){
                     ))}
                 </ul>
             </header>
-            <main className="flex flex-col justify-between h-full gap-24">
-                <div className="flex w-full items-end gap-6 h-full">
-                    <div className="w-[200px] h-[200px] rounded-full overflow-hidden">
-                        <Image src={Profile} alt="Profile" className="grayscale-100"/>
-                    </div>
-                    <p className="font-jetbrains-mono text-text-subtitle">
-                        Hello! I'm Pedro Henrique
-                    </p>
+            <main className="flex flex-col justify-center h-full gap-24">
+                <div className="w-[200px] h-[200px] rounded-full">
+                    <Image src={Profile} alt="Profile" className="grayscale-100"/>
                 </div>
-                <div className="border-t min-h-72 border-t-text-content/50 pt-6 gap-4 flex flex-col ">
-                    <h2 className="font-roboto-mono font-medium text-neutral-600 text-2xl">
-                        //about
-                    </h2>
-                    <p className="text-justify text-base text-text-subtitle leading-[200%]">
+                <div className="border-t border-t-text-content/50">
+                    <h2>//about</h2>
+                    <p>
                         I&apos;m a full-stack developer passionate about technology, continuous learning, and sharing knowledge.
                         I created PedroH&apos;s DevLog to document my journey in the development world, from lines of code to career challenges.
                         My mission with this blog is to build a community for learning and sharing experiences, showing that every developer has their own unique path—and

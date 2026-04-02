@@ -10,7 +10,7 @@ export default function Home() {
           PedroH&rsquo;s DevLog
         </h1>
         <h2 className="font-roboto-mono text-zinc-300">
-          const stacks = ['Full Stack Developer', 'Game Developer']; <span className="text-text-content">// Coding, Building & Playing</span>
+          const stacks = [<span className="text-[#00ff00]/80">'Full Stack Developer'</span>,<span className="text-[#00ff00]/80">'Game Developer'</span>]; <span className="text-text-content">// Coding, Building & Playing</span>
         </h2>
         <nav className="w-2xs h-8 flex flex-col gap-6 ">
         <ul className="flex gap-6 flex-col">
