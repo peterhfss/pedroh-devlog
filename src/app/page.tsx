@@ -1,29 +1,39 @@
-import navigationLinks from "@/lib/utils/navigation-links";
-import Link from "next/link";
+'use client'
+
+import { Footer } from "@/components/footer";
+import { Header } from "@/components/header";
+import { TerminalPrompt } from "@/components/terminal-prompt";
 
 export default function Home() {
 
   return (
-    <section className="w-7xl m-auto h-96">
-      <main className="flex flex-col gap-12">
-        <h1 className="text-7xl font-geist-sans font-bold text-text-title">
-          PedroH&rsquo;s DevLog
-        </h1>
-        <h2 className="font-roboto-mono text-zinc-300">
-          const stacks = [<span className="text-[#00ff00]/80">'Full Stack Developer'</span>,<span className="text-[#00ff00]/80">'Game Developer'</span>]; <span className="text-text-content">// Coding, Building & Playing</span>
-        </h2>
-        <nav className="w-2xs h-8 flex flex-col gap-6 ">
-        <ul className="flex gap-6 flex-col">
-          {navigationLinks.map((link) =>(
-            <li key={link.name}>
-              <Link href={link.href} className="font-roboto-mono text-base text-neutral-400 hover:text-neutral-200">
-                {link.name}
-              </Link>
-            </li>
-          ))}
-        </ul>
-        </nav>
-      </main>
-    </section>
+    <div className="min-h-screen bg-background">
+      <Header />
+
+      <div className="max-w-3xl mx-auto px-4 py-10">
+        {/* Hero */}
+        <section className="mb-10">
+          <TerminalPrompt>whoami</TerminalPrompt>
+          <div className="mt-4 pl-5 border-l border-border">
+            <h1 className="text-xl font-medium text-foreground mb-1">Pedro Henrique</h1>
+            <p className="text-sm text-muted leading-relaxed max-w-lg ">
+              Sistemas confiáveis com TypeScript, Python e PostgreSQL. Escrevo sobre os bastidores do desenvolvimento: código, arquitetura e os desafios da carreira dev.
+            </p>
+            <div className="flex flex-wrap gap-2 mt-4">
+              {["TypeScript", "Python", "Node.js", "Docker", "AWS", "React", "PostgreSQL"].map((skill) => (
+                <span key={skill} className="font-mono text-[10px] text-muted border border-border px-2 py-0.5 rounded">
+                  {skill}
+                </span>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* Tabs */}
+
+        {/* Footer */}
+        <Footer /> 
+      </div>
+    </div>
   );
 }
