@@ -1,8 +1,10 @@
-export default function Blog(){
+import { Tab } from "@/components/tab";
+
+export function Blog(){
 
     return(
-        <section className="">
-           
-        </section>
+        <Tab title="ls -lt posts/">
+            
+        </Tab>
     )
 }

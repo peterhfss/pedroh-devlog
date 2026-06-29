@@ -1,4 +1,10 @@
-export type Links = {
+
+export type TabId = "writing" | "projects" | "about"
+
+export type ProjectType = {
     name: string;
-    href: string;
+    desc: string;
+    lang: string;
+    langColor: string;
+
 }

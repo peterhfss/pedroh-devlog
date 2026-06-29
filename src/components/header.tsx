@@ -7,19 +7,19 @@ export function Header(){
                 <div className="flex items-center gap-2">
                     <TerminalIcon size={16} className="text-primary"/>
                     <span className="font-mono text-sm font-medium text-foreground">pedroh's devlog</span>
-                    <span className="font-mono text-xs text-muted hidden sm:inline">['full-stack', 'game dev']</span>
+                    <span className="font-mono text-xs text-muted-foreground hidden sm:inline">['full-stack', 'game dev']</span>
                 </div>
                 <div className="flex items-center gap-1">
-                    <a href="/" className="p-2 text-muted hover:text-foreground transition-colors rounded ">
+                    <a href="https://www.linkedin.com/in/pedrohenriquefrancelino/" target="_blank" className="p-2 text-muted-foreground hover:text-foreground transition-colors rounded ">
                         <LinkedinLogoIcon  size={20}/>
                     </a>
-                    <a href="/" className="p-2 text-muted hover:text-foreground transition-colors rounded ">
+                    <a href="/" target="_blank" className="p-2 text-muted-foreground hover:text-foreground transition-colors rounded ">
                         <RssIcon  size={20}/>
                     </a>
-                    <a href="/" className="p-2 text-muted hover:text-foreground transition-colors rounded ">
+                    <a href="https://github.com/peterhfss" target="_blank" className="p-2 text-muted-foreground hover:text-foreground transition-colors rounded ">
                         <GithubLogoIcon  size={20}/>
                     </a>
-                    <a href="/" className="p-2 text-muted hover:text-foreground transition-colors rounded ">
+                    <a href="https://discord.gg/tWETmrrnZp" target="_blank" className="p-2 text-muted-foreground hover:text-foreground transition-colors rounded ">
                         <DiscordLogoIcon size={20}/>
                     </a>
                 </div>
