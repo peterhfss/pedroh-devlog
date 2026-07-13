@@ -5,11 +5,15 @@ import { TabId } from "@/types";
 import { useState } from "react";
 import { About } from "./about/page";
 import { Projects } from "./projects/page";
-import { Blog }  from "./blog/page";
+import { allPosts } from "contentlayer/generated";
+import { Blog } from "./blog/page";
+import { stacks } from "@/lib/utils";
 
 export default function Home() {
 
   const [activeTab, setActiveTab] = useState<"writing" | "projects" | "about">("writing")
+
+  const posts = allPosts
 
   function handleActiveTab(tab:TabId){
     setActiveTab(tab)
@@ -20,7 +24,7 @@ export default function Home() {
     <div className="min-h-screen bg-background">
       <Header />
 
-      <div className="max-w-3xl mx-auto px-4 py-10">
+      <main className="max-w-3xl mx-auto px-4 py-10">
         {/* Hero */}
         <section className="mb-10">
           <TerminalPrompt>whoami</TerminalPrompt>
@@ -30,7 +34,7 @@ export default function Home() {
             Building reliable systems with TypeScript, Python, and PostgreSQL. I write about the behind-the-scenes of software development: code, architecture, and navigating a dev career.
             </p>
             <div className="flex flex-wrap gap-2 mt-4">
-              {["TypeScript", "Python", "Node.js", "Docker", "AWS", "React", "PostgreSQL"].map((skill) => (
+              {stacks.map((skill) => (
                 <span key={skill} className="font-mono text-[10px] text-muted-foreground border border-border px-2 py-0.5 rounded">
                   {skill}
                 </span>
@@ -43,7 +47,8 @@ export default function Home() {
         <TabContainer onHandleActiveTab={handleActiveTab} activeTab={activeTab} />
 
         {activeTab === "writing" && (
-          <Blog />
+          <Blog posts={posts} />
+        
         )}
 
         {activeTab === "projects" && (
@@ -56,7 +61,7 @@ export default function Home() {
 
         {/* Footer */}
         <Footer /> 
-      </div>
+      </main>
     </div>
   );
 }

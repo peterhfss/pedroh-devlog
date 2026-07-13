@@ -25,6 +25,7 @@ const jetBrainsMono = JetBrains_Mono({
 export const metadata: Metadata = {
   title: "PedroH's DevLog",
   description: "My developer journey blog. I share real-world coding tutorials and insights on building a software developer career",
+  
 };
 
 export default function RootLayout({

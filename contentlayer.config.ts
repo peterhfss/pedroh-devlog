@@ -1,19 +1,32 @@
-import { defineDocumentType, makeSource } from 'contentlayer/source-files'
+import { defineDocumentType, makeSource } from 'contentlayer2/source-files'
+import remarkGfm from 'remark-gfm'
+import highlight from 'rehype-highlight'
 
 export const Post = defineDocumentType(() => ({
   name: 'Post',
-  filePathPattern: `**/*.md`,
+  filePathPattern: `**/*.mdx`,
+  contentType: 'mdx',
   fields: {
     title: { type: 'string', required: true },
     date: { type: 'date', required: true },
-    views: {type: 'number', required:true},
+    
   },
   computedFields: {
+    url:{
+        type:'string',resolve: (post) => `/blog/posts/${post._raw.flattenedPath}`
+    },
     slug:{
-        type:'string',
-        resolve: (doc) => doc._raw.sourceFileName.replace('md', '')
+      type: 'string',
+      resolve: (post) => post._raw.flattenedPath,
     }
   },
 }))
 
-export default makeSource({ contentDirPath: 'posts', documentTypes: [Post] })
+export default makeSource({ 
+  contentDirPath: 'posts', 
+  documentTypes: [Post] ,
+  mdx: {
+    remarkPlugins: [remarkGfm],
+    rehypePlugins: [highlight],
+  },
+})

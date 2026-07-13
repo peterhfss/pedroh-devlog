@@ -1,4 +1,3 @@
-
 export type TabId = "writing" | "projects" | "about"
 
 export type ProjectType = {
@@ -6,5 +5,11 @@ export type ProjectType = {
     desc: string;
     lang: string;
     langColor: string;
+    url: string;
 
+}
+
+export type TagType = {
+    label: string;
+    color:string;
 }
