@@ -1,6 +1,6 @@
 import { defineDocumentType, makeSource } from 'contentlayer2/source-files'
 import remarkGfm from 'remark-gfm'
-import highlight from 'rehype-highlight'
+import rehypeShiki from '@shikijs/rehype'
 
 export const Post = defineDocumentType(() => ({
   name: 'Post',
@@ -8,25 +8,36 @@ export const Post = defineDocumentType(() => ({
   contentType: 'mdx',
   fields: {
     title: { type: 'string', required: true },
-    date: { type: 'date', required: true },
-    
+    publishedAt: { type: 'date', required: true },
+    tags: { type: 'list', of: { type: 'string' }, default: [] },
+
+
   },
   computedFields: {
-    url:{
-        type:'string',resolve: (post) => `/blog/posts/${post._raw.flattenedPath}`
+    url: {
+      type: 'string', resolve: (post) => `/blog/posts/${post._raw.flattenedPath}`
     },
-    slug:{
+    slug: {
       type: 'string',
       resolve: (post) => post._raw.flattenedPath,
     }
   },
 }))
 
-export default makeSource({ 
-  contentDirPath: 'posts', 
-  documentTypes: [Post] ,
+export default makeSource({
+  contentDirPath: 'posts',
+  documentTypes: [Post],
   mdx: {
     remarkPlugins: [remarkGfm],
-    rehypePlugins: [highlight],
+    rehypePlugins: [
+      [
+        rehypeShiki,
+        {
+          // Altere 'one-dark-pro' para 'dracula'
+          theme: 'one-dark-pro',
+        },
+      ],
+    ],
+
   },
 })

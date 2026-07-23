@@ -8,6 +8,7 @@ import { Projects } from "./projects/page";
 import { allPosts } from "contentlayer/generated";
 import { Blog } from "./blog/page";
 import { stacks } from "@/lib/utils";
+import { useRouter } from "next/navigation";
 
 export default function Home() {
 
@@ -31,7 +32,7 @@ export default function Home() {
           <div className="mt-4 pl-5 border-l border-border">
             <h1 className="text-xl font-medium text-foreground mb-1">Pedro Henrique</h1>
             <p className="text-sm text-muted-foreground leading-relaxed max-w-lg ">
-            Building reliable systems with TypeScript, Python, and PostgreSQL. I write about the behind-the-scenes of software development: code, architecture, and navigating a dev career.
+              Building reliable systems with TypeScript, Python, and PostgreSQL. I write about the behind-the-scenes of software development: code, architecture, and navigating a dev career.
             </p>
             <div className="flex flex-wrap gap-2 mt-4">
               {stacks.map((skill) => (

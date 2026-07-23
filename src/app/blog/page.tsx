@@ -4,6 +4,7 @@ import { Post } from "contentlayer/generated";
 
 type BlogProps = {
     posts: Post[];
+    
 }
 
 export function Blog({posts}: BlogProps){
