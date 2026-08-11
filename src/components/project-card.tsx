@@ -1,5 +1,7 @@
-import { ProjectType } from "@/types"
+'use client'
+
 import { ArrowDownRightIcon } from "@phosphor-icons/react"
+import type { ProjectType } from "@/types"
 
 interface ProjectProps {
     project: ProjectType

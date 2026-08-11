@@ -1,28 +1,15 @@
-'use client'
 
-import { Footer, Header, TerminalPrompt, TabContainer } from "@/components";
-import { TabId } from "@/types";
-import { useState } from "react";
-import { About } from "./about/page";
-import { Projects } from "./projects/page";
-import { allPosts } from "contentlayer/generated";
-import { Blog } from "./blog/page";
+
+import { Footer, Header, TabContainer, TerminalPrompt } from "@/components";
 import { stacks } from "@/lib/utils";
-import { useRouter } from "next/navigation";
 
-export default function Home() {
+type MainProps = {
+  children: React.ReactNode
+}
 
-  const [activeTab, setActiveTab] = useState<"writing" | "projects" | "about">("writing")
-
-  const posts = allPosts
-
-  function handleActiveTab(tab:TabId){
-    setActiveTab(tab)
-    
-  }
-
-  return (
-    <div className="min-h-screen bg-background">
+export default function Main({children}: MainProps){
+    return(
+        <div className="min-h-screen bg-background">
       <Header />
 
       <main className="max-w-3xl mx-auto px-4 py-10">
@@ -43,26 +30,11 @@ export default function Home() {
             </div>
           </div>
         </section>
-
-        {/* Tabs */}
-        <TabContainer onHandleActiveTab={handleActiveTab} activeTab={activeTab} />
-
-        {activeTab === "writing" && (
-          <Blog posts={posts} />
-        
-        )}
-
-        {activeTab === "projects" && (
-          <Projects />
-        )}
-
-        {activeTab === "about" && (
-          <About />
-        )}
-
+        <TabContainer />
+              {children}
         {/* Footer */}
         <Footer /> 
       </main>
     </div>
-  );
+    )
 }

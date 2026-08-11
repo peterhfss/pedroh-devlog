@@ -1,4 +1,10 @@
+import type { TabItem } from "@/types";
 
+export const tabs: TabItem[] = [
+    { title: 'writing', pathName: '/'},
+    { title: 'about', pathName: '/about'},
+    { title: 'projects', pathName: '/projects'},
+]
 
 export const projects = [
     { name: "portfolio-nextjs", desc: "My personal portfolio built with Next.js and TypeScript, designed for speed and clean code", lang: "Typescript", langColor: "#3178c6", url: "https://github.com/peterhfss/portfolio-nextjs" },
@@ -17,4 +23,12 @@ export function formatDate(date:string){
       };
 
   return data.toLocaleDateString('en-US', formato)
+}
+
+export function getSiteUrl(){
+    if (process.env.VERCEL_URL === undefined){
+        return 'http://localhost:3000'
+    }
+
+    return `https://${process.env.VERCEL_URL}`
 }

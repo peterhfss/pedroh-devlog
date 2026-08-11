@@ -138,3 +138,17 @@ body {
   background: var(--background);
   color: var(--foreground);
 }
+
+.prose pre code{
+  background: transparent;
+  padding: 0;
+  border: none;
+  border-radius: 0;
+  font-size: inherit;
+  font-family: inherit;
+}
+
+.prose code::before,
+.prose code::after {
+  content: none;
+}

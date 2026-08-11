@@ -1,3 +1,5 @@
+'use client'
+
 import { DiscordLogoIcon, GithubLogoIcon, LinkedinLogoIcon, RssIcon, TerminalIcon } from "@phosphor-icons/react"
 
 export function Header(){
@@ -10,16 +12,16 @@ export function Header(){
                     <span className="font-mono text-xs text-muted-foreground hidden sm:inline">['full-stack', 'game dev']</span>
                 </div>
                 <div className="flex items-center gap-1">
-                    <a href="https://www.linkedin.com/in/pedrohenriquefrancelino/" target="_blank" className="p-2 text-muted-foreground hover:text-foreground transition-colors rounded " aria-label="Linkedin">
+                    <a href="https://www.linkedin.com/in/pedrohenriquefrancelino/" target="_blank" className="p-2 text-muted-foreground hover:text-foreground transition-colors rounded " aria-label="Linkedin" rel="noopener">
                         <LinkedinLogoIcon  size={20}/>
                     </a>
-                    <a href="/" target="_blank" className="p-2 text-muted-foreground hover:text-foreground transition-colors rounded " aria-label="RSS">
+                    <a href="/" target="_blank" className="p-2 text-muted-foreground hover:text-foreground transition-colors rounded " aria-label="RSS" rel="noopener">
                         <RssIcon  size={20}/>
                     </a>
-                    <a href="https://github.com/peterhfss" target="_blank" className="p-2 text-muted-foreground hover:text-foreground transition-colors rounded " aria-label="GitHub">
+                    <a href="https://github.com/peterhfss" target="_blank" className="p-2 text-muted-foreground hover:text-foreground transition-colors rounded " aria-label="GitHub" rel="noopener">
                         <GithubLogoIcon  size={20}/>
                     </a>
-                    <a href="https://discord.gg/tWETmrrnZp" target="_blank" className="p-2 text-muted-foreground hover:text-foreground transition-colors rounded " aria-label="Discord">
+                    <a href="https://discord.gg/tWETmrrnZp" target="_blank" className="p-2 text-muted-foreground hover:text-foreground transition-colors rounded " aria-label="Discord" rel="noopener">
                         <DiscordLogoIcon size={20}/>
                     </a>
                 </div>

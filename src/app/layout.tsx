@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono, Roboto_Mono, JetBrains_Mono } from "next/font/google";
+import { Geist, Geist_Mono, JetBrains_Mono, Roboto_Mono } from "next/font/google";
 import "./globals.css";
+import { getSiteUrl } from "@/lib/utils";
 
 
 const geistSans = Geist({
@@ -24,7 +25,11 @@ const jetBrainsMono = JetBrains_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "PedroH's DevLog",
+  metadataBase: new URL(getSiteUrl()), 
+  title: {
+    template: "%s | PedroH's DevLog",
+    default: "PedroH's DevLog",
+  },
   description: "My developer journey blog. I share real-world coding tutorials and insights on building a software developer career",
   
 };

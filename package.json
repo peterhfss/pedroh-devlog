@@ -7,8 +7,8 @@
     "build": "next build",
     "start": "next start",
     "lint": "biome check",
-    "content-build": "pnpm exec contentlayer2 build",
-    "content-watch": "pnpm exec contentlayer2 dev",
+    "content-build": "pnpm exec velite build",
+    "content-watch": "pnpm exec velite dev",
     "format": "biome format --write"
   },
   "dependencies": {
@@ -17,11 +17,9 @@
     "@phosphor-icons/react": "^2.1.10",
     "@shikijs/rehype": "^4.3.1",
     "@tailwindcss/typography": "^0.5.20",
-    "contentlayer2": "^0.5.8",
     "date-fns": "^4.4.0",
     "hast-util-to-string": "^3.0.1",
     "next": "16.2.1",
-    "next-contentlayer2": "^0.5.8",
     "react": "19.2.4",
     "react-dom": "19.2.4",
     "remark-gfm": "^4.0.1",
@@ -39,6 +37,7 @@
     "concurrently": "^10.0.3",
     "shiki": "^4.3.1",
     "tailwindcss": "^4",
-    "typescript": "^5"
+    "typescript": "^5",
+    "velite": "^0.4.0"
   }
 }

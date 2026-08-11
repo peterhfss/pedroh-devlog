@@ -1,6 +1,6 @@
 import { Tab } from "@/components/tab";
 
-export function About(){
+export default function About(){
 
     return(
         <Tab title="cat about.md">

@@ -1,25 +1,28 @@
-import { TabId } from "@/types";
+'use client'
 
-interface TabContainerProps {
-    activeTab : TabId;
-    onHandleActiveTab :(tab:TabId) => void
-}
+import Link from "next/link";
+import { usePathname } from "next/navigation";
+import { tabs } from "@/lib/utils";
 
-export function TabContainer({activeTab , onHandleActiveTab}: TabContainerProps){
+export function TabContainer(){
+
+    const pathname = usePathname()
     return(
         <div className="flex gap-0 border-b border-border mb-8">
-            {(["writing", "projects", "about"] as const).map((tab)=>(
-                <button
-                    key={tab}
-                    onClick={() =>onHandleActiveTab(tab)}
-                    className={`font-mono text-xs px-4 py-2.5 border-b-2 transition-colors cursor-pointer capitalize ${
-                        activeTab === tab 
-                            ? "border-primary text-foreground "
-                            : "border-transparent text-muted-foreground hover:text-foreground"}`}   
-                >
-                    {tab}
-                </button>
-            ))}
+           {tabs.map((tab)=>(
+               
+               <Link
+                   key={tab.pathName}
+                   href={tab.pathName}
+                   className={`font-mono text-xs px-4 py-2.5 border-b-2 transition-colors cursor-pointer capitalize ${
+                       pathname=== tab.pathName
+                           ? "border-primary text-foreground "
+                           : "border-transparent text-muted-foreground hover:text-foreground"}`}   
+               >
+                   {tab.title}
+               </Link>
+               
+           ))}
         </div>
     )
 }

@@ -1,4 +1,8 @@
-export type TabId = "writing" | "projects" | "about"
+export type TabItem = {
+    title: string;
+    pathName: string;
+    
+}
 
 export type ProjectType = {
     name: string;
