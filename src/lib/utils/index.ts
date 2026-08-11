@@ -26,9 +26,14 @@ export function formatDate(date:string){
 }
 
 export function getSiteUrl(){
-    if (process.env.VERCEL_URL === undefined){
-        return 'http://localhost:3000'
+    if (process.env.VERCEL_PROJECT_PRODUCTION_URL !== undefined){
+        return `https://${process.env.VERCEL_PROJECT_PRODUCTION_URL}`
+    }
+    if (process.env.VERCEL_URL !== undefined){
+        return `https://${process.env.VERCEL_URL}`
     }
 
-    return `https://${process.env.VERCEL_URL}`
+    
+     return 'http://localhost:3000'
+    
 }
