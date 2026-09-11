@@ -1,8 +1,12 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono, JetBrains_Mono, Roboto_Mono } from "next/font/google";
+import {
+  Geist,
+  Geist_Mono,
+  JetBrains_Mono,
+  Roboto_Mono,
+} from "next/font/google";
 import "./globals.css";
 import { getSiteUrl } from "@/lib/utils";
-
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -25,13 +29,18 @@ const jetBrainsMono = JetBrains_Mono({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL(getSiteUrl()), 
+  metadataBase: new URL(getSiteUrl()),
   title: {
     template: "%s | PedroH's DevLog",
     default: "PedroH's DevLog",
   },
-  description: "My developer journey blog. I share real-world coding tutorials and insights on building a software developer career",
-  
+  description:
+    "My developer journey blog. I share real-world coding tutorials and insights on building a software developer career",
+  alternates: {
+    types: {
+      "application/rss+xml": `${getSiteUrl()}/rss.xml`,
+    },
+  },
 };
 
 export default function RootLayout({
@@ -44,7 +53,9 @@ export default function RootLayout({
       lang="en"
       className={`${geistSans.variable} ${geistMono.variable} ${robotoMono.variable}  ${jetBrainsMono.variable}  h-full antialiased`}
     >
-      <body className="min-h-full flex flex-col">{children}</body>
+      <body className="flex flex-col">
+        {children}
+      </body>
     </html>
   );
 }

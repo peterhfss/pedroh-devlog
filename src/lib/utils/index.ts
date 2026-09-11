@@ -1,39 +1,64 @@
 import type { TabItem } from "@/types";
 
 export const tabs: TabItem[] = [
-    { title: 'writing', pathName: '/'},
-    { title: 'about', pathName: '/about'},
-    { title: 'projects', pathName: '/projects'},
-]
+  { title: "writing", pathName: "/" },
+  { title: "about", pathName: "/about" },
+  { title: "projects", pathName: "/projects" },
+];
 
 export const projects = [
-    { name: "portfolio-nextjs", desc: "My personal portfolio built with Next.js and TypeScript, designed for speed and clean code", lang: "Typescript", langColor: "#3178c6", url: "https://github.com/peterhfss/portfolio-nextjs" },
-    { name: "finan", desc: "High-performance financial system built with FastAPI and optimized for DX.", lang: "Python", langColor: "#3572a5", url: "https://github.com/peterhfss/finan"},
-    { name: "pedroh-devlog", desc: "My personal dev blog documenting my Full-Stack journey, one commit at a time.", lang: "TypeScript", langColor: "#3178c6", url: "https://github.com/peterhfss/pedroh-devlog"},
-]
+  {
+    name: "portfolio-nextjs",
+    desc: "My personal portfolio built with Next.js and TypeScript, designed for speed and clean code",
+    lang: "Typescript",
+    langColor: "#3178c6",
+    url: "https://github.com/peterhfss/portfolio-nextjs",
+  },
+  {
+    name: "finan",
+    desc: "High-performance financial system built with FastAPI and optimized for DX.",
+    lang: "Python",
+    langColor: "#3572a5",
+    url: "https://github.com/peterhfss/finan",
+  },
+  {
+    name: "pedroh-devlog",
+    desc: "My personal dev blog documenting my Full-Stack journey, one commit at a time.",
+    lang: "TypeScript",
+    langColor: "#3178c6",
+    url: "https://github.com/peterhfss/pedroh-devlog",
+  },
+];
 
-export const stacks = ["TypeScript", "Python", "Docker", "React", "Node.js", "FastAPI", "Fastify", "PostgreSQL"]
+export const stacks = [
+  "TypeScript",
+  "Python",
+  "Docker",
+  "React",
+  "Node.js",
+  "FastAPI",
+  "Fastify",
+  "PostgreSQL",
+];
 
-export function formatDate(date:string){
-    const data = new Date(date);
-    const formato: Intl.DateTimeFormatOptions = { 
-        month: 'short', 
-        day: 'numeric', 
-        year: 'numeric' 
-      };
+export function formatDate(date: string) {
+  const data = new Date(date);
+  const formato: Intl.DateTimeFormatOptions = {
+    month: "short",
+    day: "numeric",
+    year: "numeric",
+  };
 
-  return data.toLocaleDateString('en-US', formato)
+  return data.toLocaleDateString("en-US", formato);
 }
 
-export function getSiteUrl(){
-    if (process.env.VERCEL_PROJECT_PRODUCTION_URL !== undefined){
-        return `https://${process.env.VERCEL_PROJECT_PRODUCTION_URL}`
-    }
-    if (process.env.VERCEL_URL !== undefined){
-        return `https://${process.env.VERCEL_URL}`
-    }
+export function getSiteUrl() {
+  if (process.env.VERCEL_PROJECT_PRODUCTION_URL !== undefined) {
+    return `https://${process.env.VERCEL_PROJECT_PRODUCTION_URL}`;
+  }
+  if (process.env.VERCEL_URL !== undefined) {
+    return `https://${process.env.VERCEL_URL}`;
+  }
 
-    
-     return 'http://localhost:3000'
-    
+  return "http://localhost:3000";
 }

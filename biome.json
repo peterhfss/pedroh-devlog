@@ -9,8 +9,14 @@
     "ignoreUnknown": true,
     "includes": ["**", "!node_modules", "!.next", "!dist", "!build"]
   },
+  "javascript": {
+    "formatter": {
+      "quoteStyle": "double"
+    }
+  },
   "formatter": {
     "enabled": true,
+    "lineWidth": 120,
     "indentStyle": "space",
     "indentWidth": 2
   },
@@ -19,7 +25,8 @@
     "rules": {
       "recommended": true,
       "suspicious": {
-        "noUnknownAtRules": "off"
+        "noUnknownAtRules": "off",
+        "noCommentText": "off"
       }
     },
     "domains": {

@@ -139,7 +139,7 @@ body {
   color: var(--foreground);
 }
 
-.prose pre code{
+.prose pre code {
   background: transparent;
   padding: 0;
   border: none;
