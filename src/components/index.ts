@@ -3,6 +3,7 @@ import { Footer } from "./footer";
 import { Header } from "./header";
 import { Tab } from "./tab";
 import { TabContainer } from "./tab-container";
-import { TerminalPrompt } from "./terminal-prompt";
+import { Prompt } from "./terminal-prompt";
+import { Hero } from './hero';
 
-export { Footer, Header, Tab, TabContainer, TerminalPrompt, Anchor };
+export { Footer, Header, Tab, TabContainer, Prompt, Anchor, Hero };

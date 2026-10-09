@@ -1,25 +1,13 @@
 import type { Metadata } from "next";
 import {
-  Geist,
-  Geist_Mono,
-  JetBrains_Mono,
-  Roboto_Mono,
+  DM_Sans,
+  JetBrains_Mono
 } from "next/font/google";
 import "./globals.css";
 import { getSiteUrl } from "@/lib/utils";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
-});
-
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
-});
-
-const robotoMono = Roboto_Mono({
-  variable: "--font-roboto-mono",
+const dmSans = DM_Sans({
+  variable: "--font-dm-sans",
   subsets: ["latin"],
 });
 
@@ -51,9 +39,9 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${geistSans.variable} ${geistMono.variable} ${robotoMono.variable}  ${jetBrainsMono.variable}  h-full antialiased`}
+      className={`${dmSans.variable} ${jetBrainsMono.variable}  h-full antialiased scroll-smooth`}
     >
-      <body className="flex flex-col">
+      <body className="bg-bg text-text">
         {children}
       </body>
     </html>

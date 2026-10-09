@@ -1,11 +1,11 @@
-import type { ReactNode } from "react";
-
-export function TerminalPrompt({ children }: { children: ReactNode }) {
+export function Prompt({ command }: { command: string }) {
   return (
-    <span className="font-mono text-xs text-muted-foreground">
-      <span className="text-primary">▶</span>{" "}
-      <span className="text-accent">~/blog</span>{" "}
-      <span className="opacity-50">$</span> {children}
-    </span>
+    <div>
+      <span className="prompt-mark">›</span>
+      <span className="prompt-path">~/devlog</span>
+      <span className="prompt-symbol">$</span>
+      <span>{command}</span>
+    </div>
+
   );
 }

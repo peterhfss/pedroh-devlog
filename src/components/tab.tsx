@@ -1,5 +1,5 @@
 import type { ReactNode } from "react";
-import { TerminalPrompt } from "./terminal-prompt";
+import { Prompt } from "./terminal-prompt";
 
 type TabProps = {
   title: string;
@@ -10,7 +10,7 @@ export function Tab({ title, children }: TabProps) {
   return (
     <section>
       <div className="mb-5">
-        <TerminalPrompt>{title}</TerminalPrompt>
+        <Prompt command={title} />
       </div>
       <div>{children}</div>
     </section>

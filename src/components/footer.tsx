@@ -1,12 +1,19 @@
 export function Footer() {
   return (
-    
-      <footer className="mt-3 pt-6 border-border border-t">
-        <div className="font-mono text-[11px] text-muted-foreground flex flex-wrap gap-x-6 gap-y-1">
-            <span className="text-primary">▶</span> built with Next.js + TypeScript
-            <span>© 2026 pedroh.dev</span>
+    <footer className="border border-border bg-[#0B0D10]">
+      <div className="flex items-center justify-between text-[9px] text-muted pt-24 font-mono">
+        <div>
+          <span>
+            pedroh.dev © 2026 • git commit -m "Keep building"
+          </span>
         </div>
-      </footer>
-    
+        <div>
+          <span>
+            Built with Next.js + TypeScript
+          </span>
+        </div>
+      </div>
+    </footer>
+
   );
 }
