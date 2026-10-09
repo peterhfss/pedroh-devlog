@@ -41,7 +41,7 @@ export default function RootLayout({
       lang="en"
       className={`${dmSans.variable} ${jetBrainsMono.variable}  h-full antialiased scroll-smooth`}
     >
-      <body className="bg-bg text-text">
+      <body className="bg-bg text-text font-sans">
         {children}
       </body>
     </html>

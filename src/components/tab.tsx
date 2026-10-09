@@ -1,5 +1,5 @@
 import type { ReactNode } from "react";
-import { Prompt } from "./terminal-prompt";
+import { Prompt } from "./prompt";
 
 type TabProps = {
   title: string;

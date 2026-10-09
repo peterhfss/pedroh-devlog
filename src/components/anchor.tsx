@@ -6,13 +6,13 @@ interface AnchorProps extends AnchorHTMLAttributes<HTMLAnchorElement> {
     href: string;
 }
 
-export const Anchor = ({children, href, className, ...rest}: AnchorProps) => {
-    return(
+export const Anchor = ({ children, href, className, ...rest }: AnchorProps) => {
+    return (
         <a
             href={href}
             rel="noopener"
             target='_blank'
-            className={`p-2 text-muted-foreground hover:text-foreground transition-colors rounded  ${className}`}
+            className={`p-2 text-muted hover:text-white transition-colors rounded hover:bg-surface-raised hover:-translate-y-0.5  ${className}`}
             {...rest}
         >
             {children}
