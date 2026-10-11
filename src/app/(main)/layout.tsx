@@ -25,6 +25,7 @@ export default function Main({ children }: MainProps) {
         <Hero />
         <Subscription subscribed={false}/>
       </main>
+      <Footer />
     </div>
   );
 }
