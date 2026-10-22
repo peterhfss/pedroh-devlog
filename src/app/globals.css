@@ -12,6 +12,7 @@
   --blue: #58a6ff;
   --gray: #424953;
   --border: rgba(255, 255, 255, 0.09);
+  --project-card: rgba(16, 19, 24, 0.7);
   --mono: "JetBrains Mono", monospace;
   --sans: "DM Sans", sans-serif;
   --border-icon: rgba(126, 231, 135, 0.2);
@@ -29,6 +30,8 @@
   --color-green: var(--green);
   --color-blue: var(--blue);
   --color-gray: var(--gray);
+  --color-project-card: var(--project-card);
+  --color-surface: var(--surface);
   --color-surface-raised: var(--surface-raised);
   --color-border-icon: var(--border-icon);
   --color-bg-icon: var(--bg-icon);
