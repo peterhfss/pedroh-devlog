@@ -10,6 +10,7 @@
   --muted: #646d79;
   --green: #7ee787;
   --blue: #58a6ff;
+  --gray: #424953;
   --border: rgba(255, 255, 255, 0.09);
   --mono: "JetBrains Mono", monospace;
   --sans: "DM Sans", sans-serif;
@@ -27,7 +28,7 @@
   --color-soft: var(--text-soft);
   --color-green: var(--green);
   --color-blue: var(--blue);
-  --color-muted: var(--muted);
+  --color-gray: var(--gray);
   --color-surface-raised: var(--surface-raised);
   --color-border-icon: var(--border-icon);
   --color-bg-icon: var(--bg-icon);
@@ -99,7 +100,6 @@
 .clip-text{
   clip: rect(0, 0, 0, 0);
 }
-
 
 @keyframes line-grow {
 

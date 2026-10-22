@@ -5,13 +5,22 @@ export type TabItem = {
 
 export type ProjectType = {
   name: string;
-  desc: string;
-  lang: string;
-  langColor: string;
+  description: string;
+  stack: string[];
   url: string;
 };
 
 export type TagType = {
   label: string;
   color: string;
+};
+
+export type Post ={
+  title: string;
+  subtitle: string;
+  date: string;
+  readTime: string;
+  tags: string[];
+  number: string;
+  slug:string;
 };

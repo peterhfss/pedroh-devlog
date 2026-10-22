@@ -7,7 +7,7 @@ import {
   RssIcon,
   TerminalIcon,
 } from "@phosphor-icons/react";
-import { Anchor } from "./anchor";
+import { Anchor } from "./ui/anchor";
 
 
 export function Header() {

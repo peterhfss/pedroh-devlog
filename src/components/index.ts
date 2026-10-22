@@ -1,9 +1,8 @@
-import { Anchor } from "./anchor";
 import { Footer } from "./footer";
 import { Header } from "./header";
-import { Tab } from "./tab";
-import { TabContainer } from "./tab-container";
-import { Prompt } from "./prompt";
 import { Hero } from './hero';
+import { TabContainer } from "./tab-container";
+import { Anchor } from "./ui/anchor";
+import { Prompt } from "./ui/prompt";
 
-export { Footer, Header, Tab, TabContainer, Prompt, Anchor, Hero };
+export { Footer, Header, Prompt, Anchor, Hero , TabContainer };

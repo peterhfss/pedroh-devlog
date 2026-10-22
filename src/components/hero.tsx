@@ -1,8 +1,8 @@
-import { Prompt } from "./prompt"
+import { Prompt } from "./ui/prompt"
 
 export const Hero = () => {
     return (
-        <section className="relative flex items-center border-b border-b-border min-h-[88vh] before:hero-before">
+        <section className="relative flex items-center  min-h-[88vh] before:hero-before">
             <div className="absolute w-130 h-130 pointer-events-none rounded-[50%]  left-[9%] top-[18%] hero-glow" />
             <div className="relative mt-8 mx-auto hero-content">
                 <Prompt command="whoami" />
